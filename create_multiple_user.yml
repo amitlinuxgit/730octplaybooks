@@ -1,0 +1,13 @@
+---
+ - name: This playbook create a users
+   hosts: all
+   become: true
+
+   tasks:
+    - name: add list of users
+      user: name='{{ item }}'
+      with_items:
+        - Raj
+        - Sai
+        - Amit  
+
